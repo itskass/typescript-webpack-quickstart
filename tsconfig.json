@@ -1,0 +1,42 @@
+{
+  // defines a pleasant typescript setup for working with webpack 
+  // in most browsers.
+  
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "strict": true, 
+    "esModuleInterop": true,
+
+    // This allows you to debug your typescript in the browser:
+    "sourceMap": true, // disable this in production.
+
+    // added some libraries to allow 
+    // dom manipulation.
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+
+    // Allow  @/* as an alias for the src folder, which prevents
+    // ugly and rigid imports like `import Bar from "../../../foo/bar.ts"` 
+    // instead you can do "@/foo/bar.ts"
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+
+    // where files will be output
+    "outDir": "dist",
+  }
+}
